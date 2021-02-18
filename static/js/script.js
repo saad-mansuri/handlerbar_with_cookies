@@ -1,12 +1,16 @@
-let taskFirsttask = document.getElementById("txtFirsttask")
-let taskSecondtask = document.getElementById("txtSectask")
+let taskFirstname = document.getElementById("txtFirsttask")
+let taskSecondname = document.getElementById("txtSectask")
 let Addtask = document.getElementById("btnAddtask")
     // var tasks = []
 $(document).ready(function() {
+    var cast = {
+        "character": []
+    }
+
 
     function init() {
         // debugger;
-        cast = getCookie("todoList");
+        cast = getCookie('todoList');
         // debugger;
         if (typeof cast != "" && cast != "") {
             cast = JSON.parse(cast);
@@ -16,13 +20,12 @@ $(document).ready(function() {
     }
     init()
 
-    var cast = {
-        "character": [{
-            "first_name": "Saad",
-            "second_name": "Mansuri"
-        }]
-    }
-    console.log(cast)
+    // var cast = {
+    //     "character": [{
+    //         "first_name": "Saad",
+    //         "second_name": "Mansuri"
+    //     }]
+    // }
 
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
@@ -53,12 +56,15 @@ $(document).ready(function() {
         var taskDict = {}
             // var index = tasks.length
             // taskDict[index] = tasks.length
-        taskDict["first_name"] = taskFirsttask.value
-        taskDict["second_name"] = taskSecondtask.value
+        taskDict["first_name"] = taskFirstname.value
+        taskDict["second_name"] = taskSecondname.value
         console.log(taskDict)
             // tasks.push(taskDict)
         cast.character.push(taskDict)
-        setCookie('todoList', cast, 1);
+        setCookie('todoList', cast, 1)
+            // taskFirsttask.value = ""
+            // taskSecondtask.value = ""
+        console.log(cast)
 
 
         var charTemp = $("#character-template").html()
@@ -66,18 +72,6 @@ $(document).ready(function() {
         $(".character-list-container").html(compiledCharTemp(cast))
     })
 
-    // var cast = {
-    //     "character": [{
-    //         "first_name": "Rollins",
-    //         "second_name": "Roman",
-    //     }, {
-    //         "first_name": "rock",
-    //         "second_name": "Salman",
-    //     }, {
-    //         "first_name": "Sajjuda",
-    //         "second_name": "luhar",
-    //     }]
-    // }
     var charTemp = $("#character-template").html()
     var compiledCharTemp = Handlebars.compile(charTemp)
     $(".character-list-container").html(compiledCharTemp(cast))
