@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>handlebar_again</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css" />
+
+</head>
+
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <input type="text" id="txtFirsttask" class="form-control" placeholder="Enter Task">
+            </div>
+            <div class="col-md-3">
+                <input type="text" id="txtSectask" class="form-control" placeholder="Enter Task">
+            </div>
+            <div class="col-md-3">
+                <div class="btn btn-info form-control" id="btnAddtask">Submit Task</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mt-5">
+
+                <table class="character-list-container">
+                </table>
+
+                <script id="character-template" type="text/x-handlebars-template">
+                    <div class="character">
+                        <tr>
+                            <th>First Task</th>
+                            <th>Second Task</th>
+                            <!-- <th>Age</th> -->
+                        </tr>
+                        {{#each character}}
+                        <tr>
+                            <td>{{first_name}}</td>
+                            <td>{{second_name}}</td>
+                            <!-- <td>{{age}}</td> -->
+                        </tr>
+                        {{/each}}
+                    </div>
+                </script>
+
+                <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous"></script> -->
+                <script src="static/js/jquery.min.js"></script>
+                <script src="static/js/script.js"></script>
+                <script src="static/js/handlebars.min.js"></script>
+</body>
+
+</html>

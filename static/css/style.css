@@ -1,0 +1,9 @@
+.character-list-container {
+    text-decoration: none;
+}
+
+th,
+td {
+    /* border: 1px sol  id black; */
+    padding: .5rem;
+}
